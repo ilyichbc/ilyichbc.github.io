@@ -377,6 +377,45 @@ if (window.swup) {
 }
 </script>
 
+<!-- 看板娘组件 -->
+<script>
+import { loadOml2d } from 'oh-my-live2d';
+const oml2d = loadOml2d({
+  models: [
+    {
+	   "path": "https://model.oml2d.com/Pio/model.json",
+       "scale": 0.4,
+       "position": [0, 50],
+       "stageStyle": {
+       "height": 300
+  }
+}
+	
+  ],
+  tips: (_, currentIndex) => {
+    if (currentIndex === 0) {
+      return {
+        copyTips: {
+          message: ['复制了啥?']
+        },
+        idleTips: {
+          wordTheDay: true
+        }
+      };
+    } else {
+      return {
+        idleTips: {
+          wordTheDay: true
+        }
+      };
+    }
+  }
+});
+	  //console.log(oml2d.version) // 当前组件版本号
+	  //console.log(oml2d.modelIndex) // 当前模型索引值
+	  //console.log(oml2d.options) // 当前配置选项
+  </script>
+
 
 <style is:global lang="stylus">
 #banner-wrapper
